@@ -14,4 +14,7 @@ IDE：Kill5
 
 Wifi配网方式：Web方式
 
-
+branch管理：main 是最原始版，作为参考不动
+            work为主分支，发布用origin
+            其他每次开发及变动，在work基础上开分支进行修改
+            
