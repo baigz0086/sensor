@@ -26,6 +26,7 @@
 #include "UART1.h"
 #include "UART2.h"
 #include "WIFI.h"
+#include "eeprom.h"
 //#include "UART3.h"
 //#include "UART4.h"
 #include "control.h"

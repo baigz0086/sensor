@@ -106,7 +106,7 @@ void Do100ms(void)
 	
 	bDo100ms = 0;
 	
-	fTime();
+	//fTime();
 	
 	
 	if(bWaitRecSensor)
@@ -133,11 +133,19 @@ void Do100ms(void)
     Counter_To_1S++;
     if(Counter_To_1S >= 10)
     {
-        Counter_To_1S   = 0;
+			fTime();  // chg 20220305
+      Counter_To_1S   = 0;
 
-		bFlash1S ^= 1;	
+		  bFlash1S ^= 1;	
 		
-		if(StepCommWifi == WIFI_POWERON) StepCommWifi = WIFI_APPLY_AT;
+		  if(StepCommWifi == WIFI_POWERON)
+			{
+				if(iapRead(WIFI_SETTED_FLAG) == 99){
+					StepCommWifi = WIFI_WMAC_SEC;
+				}else{
+					StepCommWifi = WIFI_APPLY_AT;
+				}
+			}
 			
     }	
 }

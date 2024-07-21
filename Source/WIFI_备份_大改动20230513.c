@@ -22,15 +22,6 @@ const  char xdata	APPLY_AT_ACK[]="a";
 const  char xdata	ENT_AT[]="a";
 const  char xdata	ENT_AT_ACK[]="+ok\r\n\r\n";
 
-//const  char xdata	CMDPW_STAT[]="AT+CMDPW\r";
-//const  char xdata	CMDPW_STAT_ACK[]="AT+CMDPW\n\r+ok=GT\r\n\r\n";
-
-//const  char xdata	CMDPW_SET[]="AT+CMDPW=GT\r";
-//const  char xdata	CMDPW_SET_ACK[]="AT+CMDPW=GT\n\r+ok\r\n\r\n";
-
-const  char xdata	ENTM[]="AT+ENTM\r";
-const  char xdata	ENTM_ACK[]="AT+ENTM\n\r+ok\r\n\r\n";
-
 const  char xdata	WMAC[]="at+wsmac\r";
 const  char xdata	WMAC_ACK[]="AT+WSMAC\n\r+ok=A5A4A3A2A1A0\r\n\r\n";
 
@@ -44,24 +35,15 @@ const  char xdata	NREGDT_ACK[]="AT+nregdt=A,%MAC\n\r+ok\r\n\r\n";
 // add 2023/2/12 end
 
 // add 2023/5/8 smartAPCong 模式打开
-//const  char xdata	SMARTAP[]="AT+SMARTAPCONFIG=on\r";
-//const  char xdata	SMARTAP_ACK[]="AT+SMARTAPCONFIG=on\n\r+ok\r\n\r\n";
+const  char xdata	SMARTAP[]="AT+SMARTAPCONFIG=on\r";
+const  char xdata	SMARTAP_ACK[]="AT+SMARTAPCONFIG=on\n\r+ok\r\n\r\n";
 // add 2023/5/8 end
 
 const  char xdata	WMODE[]="at+wmode=sta\r";
 const  char xdata	WMODE_ACK[]="AT+WMODE=sta\n\r+ok\r\n\r\n";
 
-const  char xdata	APMODECHECK[]="at+wmode\r";
-const  char xdata	MODECHECK_ACK[]="AT+wmode\n\r+ok=AP\r\n\r\n";
-
-const  char xdata	APMODE[]="at+wmode=ap\r";
-const  char xdata	APMODE_ACK[]="AT+WMODE=ap\n\r+ok\r\n\r\n";
-
-const  char xdata	WNETP[]="at+netp=tcp,client,9999,www.healthsensor.com.cn\r";
-const  char xdata	WNETP_ACK[]="at+netp=tcp,client,9999,www.healthsensor.com.cn\n\r+ok\r\n\r\n";
-
-//const  char xdata	WNETP[]="at+NETP=TCP,CLIENT,9999,123.57.185.154\r";
-//const  char xdata	WNETP_ACK[]="AT+NETP=TCP,CLIENT,9999,123.57.185.154\n\r+ok\r\n\r\n";
+const  char xdata	WNETP[]="at+netp=tcp,client,80,15.152.44.45\r";
+const  char xdata	WNETP_ACK[]="AT+NETP=tcp,client,80,15.152.44.45\n\r+ok\r\n\r\n";
 
 //const  char xdata	WNETP[]="at+netp=tcp,client,80,223.134.3.129\r";
 //const  char xdata	WNETP_ACK[]="AT+NETP=tcp,client,80,223.134.3.129\n\r+ok\r\n\r\n";
@@ -89,31 +71,27 @@ const  char xdata	RESET_ACK[]="AT+Z\n\r+ok\r\n\r\n";
 const  char xdata	TCPTO[]="AT+TCPTO=0\r";
 const  char xdata	TCPTO_ACK[]="AT+TCPTO=0\n\r+ok\r\n\r\n";
 
-const  char xdata	CMDPW[]="AT+CMDPW=GT\r";
-const  char xdata	CMDPW_ACK[]="AT+CMDPW=GT\n\r+ok\r\n\r\n";
+const  char xdata	CMDPW[]="AT+CMDPW=HF\r";
+const  char xdata	CMDPW_ACK[]="AT+CMDPW=HF\n\r+ok\r\n\r\n";
 
 // add command on transfer mode
-const  char xdata	WMACHF[]="GTAT+WSMAC\r";
+const  char xdata	WMACHF[]="HFAT+WSMAC\r";
 const  char xdata	WMACHF_ACK[]="AT+WSMAC\n\r+ok=A5A4A3A2A1A0\r\n\r\n";
 
-const  char xdata	TCPLKHF[]="GTAT+TCPLK\r";
+const  char xdata	TCPLKHF[]="HFAT+TCPLK\r";
 const  char xdata	TCPLKHF_ACK[]="AT+TCPLK\n\r+ok=on\r\n\r\n";
 
-const  char xdata	TCPONHF[]="GTAT+TCPDIS=on\r";
+const  char xdata	TCPONHF[]="HFAT+TCPDIS=on\r";
 const  char xdata	TCPONHF_ACK[]="AT+TCPDIS=on\n\r+ok\r\n\r\n";
 
-const  char xdata	TCPENHF[]="GTAT+TCPDIS\r";
+const  char xdata	TCPENHF[]="HFAT+TCPDIS\r";
 const  char xdata	TCPENHF_ACK[]="AT+TCPDIS\n\r+ok=on\r\n\r\n";
 
 //const  char xdata	SENSOR_VERSION[]="1.0.0_2";  // VR-BB后reset处理对应
-//const  char xdata	SENSOR_VERSION[]="1.0.0_3";  // 1,4->5  2,'p' cmd
-//const  char xdata	SENSOR_VERSION[]="1.0.0_4";  // 1,逻辑改造（CMDPW） 2,GAIN设定处理
-const  char xdata	SENSOR_VERSION[]="1.0.0_5";  // 1,APmode 2,netp = www.healthsensor.com.cn
+const  char xdata	SENSOR_VERSION[]="1.0.0_3";  // 1,4->5  2,'p' cmd
 
 #define	REC_WIFI_DATA		(Uart2NoRecTime >= 30 && pUART2_rptr >= 1)
 
-u8 wslkcnt10 = 0;
-u8 wslkcnt100 = 0;
 
 void fInitWifi(void)
 {
@@ -174,52 +152,8 @@ void fSendServerHand(void)
 	
 	// Uart2Send(StepCommSensor);  //for debug   yaoshanchu!!!
 	
-}
 
-// 电文K，读取GAIN设定值
-void fSendGetGain(void)
-{
-	u16 Sum;
-	u8  i;
-	
-	Sum = 0;
-	Uart2Send('C');
-	Sum += 'C';
-	Uart2Send('L');
-	Sum += 'L';
-	
-	Uart2Send(MacAddr[0]);
-	Sum += MacAddr[0];
-	Uart2Send(MacAddr[1]);
-	Sum += MacAddr[1];
-	Uart2Send(MacAddr[2]);
-	Sum += MacAddr[2];
-	Uart2Send(MacAddr[3]);
-	Sum += MacAddr[3];
-	Uart2Send(MacAddr[4]);
-	Sum += MacAddr[4];
-	Uart2Send(MacAddr[5]);
-	Sum += MacAddr[5];
-	
-	Uart2Send(19);  // 12+7
-	Sum += 19;
-	
-	Uart2Send('K');
-	Sum += 'K';
-	
-	for(i=0;i<7;i++)
-	{
-		Uart2Send(SENSOR_VERSION[i]);
-		Sum += SENSOR_VERSION[i];
-	}
-	
-	Uart2Send((unsigned char)(Sum / 256));
-	Uart2Send((unsigned char)(Sum));
-	
-	// Uart2Send(StepCommSensor);  //for debug   yaoshanchu!!!
-	
 }
-
 
 //void fSendServerData(void)
 //{
@@ -314,103 +248,6 @@ void fSendServerData(void)
 	Uart2Send(Sum);
 }
 
-void fSend_gain_res(void)
-{
-	u16 Sum;
-	u8	i;
-	
-	Sum = 0;
-	Uart2Send('C');
-	Sum += 'C';
-	Uart2Send('L');
-	Sum += 'L';
-	
-	Uart2Send(MacAddr[0]);
-	Sum += MacAddr[0];
-	Uart2Send(MacAddr[1]);
-	Sum += MacAddr[1];
-	Uart2Send(MacAddr[2]);
-	Sum += MacAddr[2];
-	Uart2Send(MacAddr[3]);
-	Sum += MacAddr[3];
-	Uart2Send(MacAddr[4]);
-	Sum += MacAddr[4];
-	Uart2Send(MacAddr[5]);
-	Sum += MacAddr[5];
-	
-	Uart2Send(70);    //47 -> 49    2023-5-7
-	Sum += 69;
-	
-	Uart2Send('L');
-	Sum += 'L';
-	
-	Uart2Send(bCommandResult);        //the result of command
-	Sum += bCommandResult;
-	
-	for(i=0;i<4;i++)
-	{
-		Uart2Send(timestamp.time[i]);
-		Sum += timestamp.time[i];
-	}
-	
-	for(i=0;i<45;i++)
-	{
-		Uart2Send(Gain_set_buffer[i]);
-		Sum += SEND_buffer[i];
-	}
-	
-	Uart2Send(Sum / 256);
-	Uart2Send(Sum);
-}
-
-void fSend_gain_res_debug(void)
-{
-	u16 Sum;
-	u8	i;
-	
-	Sum = 0;
-	Uart2Send('C');
-	Sum += 'C';
-	Uart2Send('L');
-	Sum += 'L';
-	
-	Uart2Send(MacAddr[0]);
-	Sum += MacAddr[0];
-	Uart2Send(MacAddr[1]);
-	Sum += MacAddr[1];
-	Uart2Send(MacAddr[2]);
-	Sum += MacAddr[2];
-	Uart2Send(MacAddr[3]);
-	Sum += MacAddr[3];
-	Uart2Send(MacAddr[4]);
-	Sum += MacAddr[4];
-	Uart2Send(MacAddr[5]);
-	Sum += MacAddr[5];
-	
-	Uart2Send(70);    //47 -> 49    2023-5-7
-	Sum += 69;
-	
-	Uart2Send('L');
-	Sum += 'L';
-	
-	Uart2Send(bCommandResult);        //the result of command
-	Sum += bCommandResult;
-	
-	for(i=0;i<4;i++)
-	{
-		Uart2Send(timestamp.time[i]);
-		Sum += timestamp.time[i];
-	}
-	
-	for(i=0;i<18;i++)
-	{
-		Uart2Send(GAIN_SETTING[i]);
-		Sum += SEND_buffer[i];
-	}
-	
-	Uart2Send(Sum / 256);
-	Uart2Send(Sum);
-}
 
 //add by 2022-2-12
 void fSend_CmdData2(void)
@@ -643,30 +480,18 @@ void fSendToWIFI(void)
 			StepCommWifi = WAIT_ENT_AT_ACK;
 		break;
 		
-		case WIFI_WMODE:
+		case WIFI_WMAC:		
 			fClean_RecWIFI_Buf();
-			Uart2SendStr(WMODE); 
-			StepCommWifi = WIFI_WMODE_ACK;
-		break;	
+			Uart2SendStr(WMAC); 
+			StepCommWifi = WIFI_WMAC_ACK;
+		break;
 		
-//		case WIFI_CMDPW_STAT:
-//			fClean_RecWIFI_Buf();
-//			Uart2SendStr(CMDPW_STAT); 
-//			StepCommWifi = WIFI_CMDPW_STAT_ACK;
-//		break;
-
-		case WIFI_ENTM:
-			fClean_RecWIFI_Buf();
-			Uart2SendStr(ENTM); 
-			StepCommWifi = WIFI_ENTM_ACK;
-		break;			
-
 		// add 2023/5/8 start
-		//case WIFI_SMARTAP_ON:		
-		//	fClean_RecWIFI_Buf();
-		//	Uart2SendStr(SMARTAP); 
-		//	StepCommWifi = WIFI_SMARTAP_ON_ACK;
-		//break;	
+		case WIFI_SMARTAP_ON:		
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(SMARTAP); 
+			StepCommWifi = WIFI_SMARTAP_ON_ACK;
+		break;	
 		// add 2023/5/8 end
 		
 		// add 2023/2/12 start
@@ -682,43 +507,54 @@ void fSendToWIFI(void)
 			StepCommWifi = WIFI_NREGDT_ACK;
 		break;			
 		// add 2023/2/12 end
+		
+		case WIFI_WMAC_SEC:		
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(WMACHF); 
+			StepCommWifi = WIFI_WMAC_SEC_ACK;
+		break;
+		
+		case WIFI_WMODE:
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(WMODE); 
+			StepCommWifi = WIFI_WMODE_ACK;
+		break;
 			
 		case WIFI_WNETP:
 			fClean_RecWIFI_Buf();
 			Uart2SendStr(WNETP); 
 			StepCommWifi = WIFI_WNETP_ACK;
 		break;
-	
-//		case WIFI_CMDPW_SET:		
-//			fClean_RecWIFI_Buf();
-//			Uart2SendStr(CMDPW_SET); 
-//			StepCommWifi = WIFI_CMDPW_SET_ACK;
-//		break;
-			
+		
+		case WIFI_TCPTO:
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(TCPTO); 
+			StepCommWifi = WIFI_TCPTO_ACK;
+		break;
+				
+		case WIFI_CMDPW:
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(CMDPW); 
+			StepCommWifi = WIFI_CMDPW_ACK;
+		break;
+		
 		case WIFI_RESET1:	
 			fClean_RecWIFI_Buf();
 			Uart2SendStr(RESET); 
 			StepCommWifi = WIFI_RESET1_ACK;	
 		break;
 		
-//		case WIFI_APPLY1_AT: 
-//			fClean_RecWIFI_Buf();
-//			Uart2SendStr(APPLY_AT); 
-//			StepCommWifi = WIFI_APPLY1_AT_ACK;
-//		break;
-//			
-//		case WIFI_ENT1_AT:	
-//			fClean_RecWIFI_Buf();
-//			Uart2SendStr(ENT_AT); 
-//			StepCommWifi = WAIT_ENT1_AT_ACK;
-//		break;
-		
-		// add for AP mode 20230605
-		case WIFI_APMODE_CHECK:
+		case WIFI_APPLY1_AT: 
 			fClean_RecWIFI_Buf();
-			Uart2SendStr(APMODECHECK); 
-			StepCommWifi = WIFI_APMODE_CHECK_ACK;
-		break;	
+			Uart2SendStr(APPLY_AT); 
+			StepCommWifi = WIFI_APPLY1_AT_ACK;
+		break;
+			
+		case WIFI_ENT1_AT:	
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(ENT_AT); 
+			StepCommWifi = WAIT_ENT1_AT_ACK;
+		break;
 		
 		case WIFI_WSLK:
 			fClean_RecWIFI_Buf();
@@ -726,35 +562,28 @@ void fSendToWIFI(void)
 			StepCommWifi = WIFI_WSLK_ACK;
 		break;
 		
-		case WIFI_WSLK2:
+		case WIFI_TCPON:	
 			fClean_RecWIFI_Buf();
-			Uart2SendStr(WSLK); 
-			StepCommWifi = WIFI_WSLK2_ACK;
-		break;
-
-		case WIFI_APMODE_SET:
-			fClean_RecWIFI_Buf();
-			Uart2SendStr(APMODE); 
-			StepCommWifi = WIFI_APMODE_SET_ACK;
-		break;		
-		
-		case WIFI_RESET2:	
-			fClean_RecWIFI_Buf();
-			Uart2SendStr(RESET); 
-			StepCommWifi = WIFI_RESET2_ACK;	
-		break;
-	
-		// add for AP mode end
-		case WIFI_WMAC:		
-			fClean_RecWIFI_Buf();
-			Uart2SendStr(WMAC); 
-			StepCommWifi = WIFI_WMAC_ACK;
+			Uart2SendStr(TCPON); 
+			StepCommWifi = WIFI_TCPON_ACK;
 		break;
 		
-		case WIFI_WMAC_SEC:		
+		case WIFI_TCPON_SEC:	
 			fClean_RecWIFI_Buf();
-			Uart2SendStr(WMACHF); 
-			StepCommWifi = WIFI_WMAC_SEC_ACK;
+			Uart2SendStr(TCPONHF); 
+			StepCommWifi = WIFI_TCPON_SEC_ACK;
+		break;
+		
+		case WIFI_TCPEN:	
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(TCPEN); 
+			StepCommWifi = WIFI_TCPEN_ACK;
+		break;
+		
+		case WIFI_TCPEN_SEC:	
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(TCPENHF); 
+			StepCommWifi = WIFI_TCPEN_SEC_ACK;
 		break;
 		
 		case WIFI_TCPLK:	
@@ -769,6 +598,12 @@ void fSendToWIFI(void)
 			StepCommWifi = WIFI_TCPLK_SEC_ACK;
 		break;
 		
+		case WIFI_RESET2:	
+			fClean_RecWIFI_Buf();
+			Uart2SendStr(RESET); 
+			StepCommWifi = WIFI_RESET2_ACK;	
+		break;
+		
 		case INIT_WIFI:							//wifi模块初始化复位成功后进入INIT_WIFI状态
 			if(StepCommSensor == IDLE_SENSOR)	//if sensor ready,do shake hand
 			{
@@ -781,12 +616,6 @@ void fSendToWIFI(void)
 			fSendServerHand();
 			StepCommWifi = SERVER_HAND_ACK;
 		break;	
-		
-		case GET_GAIN:						//get gain setting
-			fClean_RecWIFI_Buf();
-			fSendGetGain();
-			StepCommWifi = GET_GAIN_ACK;
-		break;
 			
 		// wifi send 
 		
@@ -833,20 +662,11 @@ void fSendToWIFI(void)
 				fSend_CmdData2();
 			}				
 		break;
-			
-//		case WIFI_GAIN_SET:
-//			if(bServer_Cmd_Ack){
-//				fSend_gain_res();
-//				StepCommWifi = WIFI_IDLE;			
-//			}
-//			
-//		break;
 	}
 }
 		
 void fRecWifi(void)
 {
-	u8 i;
 	
 	switch(StepCommWifi)
 	{
@@ -870,8 +690,7 @@ void fRecWifi(void)
 			{
 				if(UART2_buffer[0] == '+' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k') 
 				{
-					//StepCommWifi = WIFI_CMDPW_STAT;
-					StepCommWifi = WIFI_WMODE;
+					StepCommWifi = WIFI_WMAC;
 				}
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -880,191 +699,45 @@ void fRecWifi(void)
 				StepCommWifi = WIFI_APPLY_AT;
 			}
 		break;
-			
-		case WIFI_WSLK_ACK:
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[13] == 'D' && UART2_buffer[14] == 'i' && UART2_buffer[15] == 's')
-				{
-					if(wslkcnt10 < 100){    // 10s
-						WaitSendWifi = 10;
-						StepCommWifi = WIFI_WSLK;
-						wslkcnt10 = wslkcnt10 + 1;
-					}else{
-						wslkcnt10 = 0;
-						StepCommWifi = WIFI_APMODE_SET;
-					}
-				}
-				else if(UART2_buffer[9] == '+' && UART2_buffer[10] == 'o' && UART2_buffer[11] == 'k')
-				{
-					//StepCommWifi = WIFI_WMAC;
-					StepCommWifi = WIFI_TCPLK;
-				}
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				if(wslkcnt100 < 10){   // 10s
-					WaitSendWifi = 100;
-					wslkcnt100 = wslkcnt100 + 1;
-					StepCommWifi = WIFI_WSLK;
-				}else{
-						wslkcnt100 = 0;
-						StepCommWifi = WIFI_APMODE_SET;					
-				}
-			}
 		
-		break;	
-			
-		case WIFI_WSLK2_ACK:
+		case WIFI_WMAC_ACK: 	
 			if(REC_WIFI_DATA) 
 			{
-				if(UART2_buffer[13] == 'D' && UART2_buffer[14] == 'i' && UART2_buffer[15] == 's')
-				{
-					WaitSendWifi = 100;
-					StepCommWifi = WIFI_WSLK2;
-				}
-				else if(UART2_buffer[9] == '+' && UART2_buffer[10] == 'o' && UART2_buffer[11] == 'k')
-				{
-					StepCommWifi = WIFI_TCPLK;
-				}
-				else if(UART2_buffer[0] == 's' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k')
-				{
-					StepCommWifi = WIFI_APPLY_AT;   // 服务器回答：网络建立且为透传状态
-				}
-			}
-			else if(Uart2NoRecTime >= 200) 
-			{
-				WaitSendWifi = 200;
-				StepCommWifi = WIFI_WSLK2;
-			}
-		
-		break;
-
-		case WIFI_APMODE_SET_ACK: 	
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[13] == '+' && UART2_buffer[14] == 'o' && UART2_buffer[15] == 'k') 
-				{
-					StepCommWifi = WIFI_RESET2;
-				}
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				WaitSendWifi = 100;
-				StepCommWifi = WIFI_APMODE_SET;
-			}
-		break;			
-			
-//		case WIFI_CMDPW_STAT_ACK: 	
-//			if(REC_WIFI_DATA) 
-//			{
-//				if(pUART2_rptr > 15){
-//					if(UART2_buffer[14] == 'G' && UART2_buffer[15] == 'T' ){
-//						//StepCommWifi = WIFI_ENTM;
-//						StepCommWifi = WIFI_APMODE_CHECK;
-//					}else{
-//						StepCommWifi = WIFI_NREGEN;
-//					}						
-//				}else{
-//					if(UART2_buffer[10] == '+' && UART2_buffer[11] == 'o' && UART2_buffer[12] == 'k'){
-//						StepCommWifi = WIFI_NREGEN;
-//					}else{
-//						StepCommWifi = WIFI_CMDPW_STAT;
-//					}
-//				}
-//			}
-//			else if(Uart2NoRecTime >= 100) 
-//			{
-//				WaitSendWifi = 100;
-//				StepCommWifi = WIFI_CMDPW_STAT;
-//			}
-//		break;
-			
-		case WIFI_APMODE_CHECK_ACK: 	
-			if(REC_WIFI_DATA) 
-			{
-				//const  char xdata	MODECHECK_ACK[]="AT+wmode\n\r+ok=AP\r\n\r\n";
-				if(pUART2_rptr > 15){
-					if(UART2_buffer[14] == 'A' && UART2_buffer[15] == 'P' ){
-						WaitSendWifi = 100;  // 1s 间隔 
-						StepCommWifi = WIFI_APMODE_CHECK;  // AP模式继续循环，知道解除AP模式
-					}else{
-						StepCommWifi = WIFI_WSLK;
-					}						
-				}
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				WaitSendWifi = 100;
-				StepCommWifi = WIFI_APMODE_CHECK;
-			}
-		break;
-			
-		case WIFI_ENTM_ACK: 	
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[9] == '+' && UART2_buffer[10] == 'o' && UART2_buffer[11] == 'k') 
-				{
-					//StepCommWifi = WIFI_WMAC_SEC;
-						StepCommWifi = INIT_WIFI;
-				}
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				WaitSendWifi = 100;
-				StepCommWifi = WIFI_ENTM;
-			}
-		break;
-			
-		case WIFI_TCPLK_SEC_ACK: 	
-
-			if(REC_WIFI_DATA) 
-			{
-//				Uart2SendStr("debug line 762\r");
-//				Uart2SendStr(UART2_buffer);
-				if(UART2_buffer[3] == '=' && UART2_buffer[4] == 'o') 
-				{
-					StepCommWifi = INIT_WIFI;
-				}	
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				WaitSendWifi = 1000;
-				StepCommWifi = WIFI_TCPLK_SEC;
-			}
-		break;	
-			
-		case WIFI_TCPLK_ACK: 	
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[13] == '=' && UART2_buffer[14] == 'o' && UART2_buffer[15] == 'n') 
-				{
-					//StepCommWifi = WIFI_RESET2;
-					StepCommWifi = WIFI_ENTM; // 转换透传模式
+				if(UART2_buffer[10] == '+' && UART2_buffer[11] == 'o' && UART2_buffer[12] == 'k') 
+				{	
+					MacAddr[0] = IntegrateAscToHex(UART2_buffer[14],UART2_buffer[15]);
+					MacAddr[1] = IntegrateAscToHex(UART2_buffer[16],UART2_buffer[17]);
+					MacAddr[2] = IntegrateAscToHex(UART2_buffer[18],UART2_buffer[19]);
+					MacAddr[3] = IntegrateAscToHex(UART2_buffer[20],UART2_buffer[21]);
+					MacAddr[4] = IntegrateAscToHex(UART2_buffer[22],UART2_buffer[23]);
+					MacAddr[5] = IntegrateAscToHex(UART2_buffer[24],UART2_buffer[25]);
+					
+					//StepCommWifi = WIFI_NREGEN;
+					StepCommWifi = WIFI_SMARTAP_ON; // change 2023/5/8 取得macaddr后，设定smartAPConfig模式
 				}	
 			}
 			else if(Uart2NoRecTime >= 100) 
 			{
 				WaitSendWifi = 100;
-				StepCommWifi = WIFI_TCPLK;
+				StepCommWifi = WIFI_WMAC;
 			}
-		break;			
+		break;
 		
 		// add 2023-5-8 追加smartAP模式打开
-//		case WIFI_SMARTAP_ON_ACK:
-//			if(REC_WIFI_DATA) 
-//			{
-//				if(UART2_buffer[21] == '+' && UART2_buffer[22] == 'o' && UART2_buffer[23] == 'k') 
-//				{	
-//					StepCommWifi = WIFI_NREGEN;
-//				}	
-//			}
-//			else if(Uart2NoRecTime >= 100) 
-//			{
-//				WaitSendWifi = 100;
-//				StepCommWifi = WIFI_SMARTAP_ON;
-//			}
-//		break;
+		case WIFI_SMARTAP_ON_ACK:
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[21] == '+' && UART2_buffer[22] == 'o' && UART2_buffer[23] == 'k') 
+				{	
+					StepCommWifi = WIFI_NREGEN;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_SMARTAP_ON;
+			}
+		break;
 			
 		// add 2023-2-13 start
 	  case WIFI_NREGEN_ACK:
@@ -1087,8 +760,7 @@ void fRecWifi(void)
 			{
 				if(UART2_buffer[24] == '+' && UART2_buffer[25] == 'o' && UART2_buffer[26] == 'k') 
 				{
-					StepCommWifi = WIFI_WMAC;
-					//StepCommWifi = WIFI_WNETP;
+					StepCommWifi = WIFI_WMODE;
 				}
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -1099,49 +771,26 @@ void fRecWifi(void)
 		break;
 		// add 2023-2-13 end
 			
-//		case WIFI_WMAC_SEC_ACK: 
+		case WIFI_WMAC_SEC_ACK: 
 
-//			if(REC_WIFI_DATA) 
-//			{
-//				if(UART2_buffer[0] == '+' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k') 
-//				{	
-//					MacAddr[0] = IntegrateAscToHex(UART2_buffer[4],UART2_buffer[5]);
-//					MacAddr[1] = IntegrateAscToHex(UART2_buffer[6],UART2_buffer[7]);
-//					MacAddr[2] = IntegrateAscToHex(UART2_buffer[8],UART2_buffer[9]);
-//					MacAddr[3] = IntegrateAscToHex(UART2_buffer[10],UART2_buffer[11]);
-//					MacAddr[4] = IntegrateAscToHex(UART2_buffer[12],UART2_buffer[13]);
-//					MacAddr[5] = IntegrateAscToHex(UART2_buffer[14],UART2_buffer[15]);
-//					
-//					StepCommWifi = WIFI_TCPLK_SEC;
-//				}	
-//			}
-//			else if(Uart2NoRecTime >= 100) 
-//			{
-//				WaitSendWifi = 100;
-//				StepCommWifi = WIFI_WMAC_SEC;
-//			}
-//		break;
-
-		case WIFI_WMAC_ACK: 	
 			if(REC_WIFI_DATA) 
 			{
-				if(UART2_buffer[10] == '+' && UART2_buffer[11] == 'o' && UART2_buffer[12] == 'k') 
+				if(UART2_buffer[0] == '+' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k') 
 				{	
-					MacAddr[0] = IntegrateAscToHex(UART2_buffer[14],UART2_buffer[15]);
-					MacAddr[1] = IntegrateAscToHex(UART2_buffer[16],UART2_buffer[17]);
-					MacAddr[2] = IntegrateAscToHex(UART2_buffer[18],UART2_buffer[19]);
-					MacAddr[3] = IntegrateAscToHex(UART2_buffer[20],UART2_buffer[21]);
-					MacAddr[4] = IntegrateAscToHex(UART2_buffer[22],UART2_buffer[23]);
-					MacAddr[5] = IntegrateAscToHex(UART2_buffer[24],UART2_buffer[25]);
+					MacAddr[0] = IntegrateAscToHex(UART2_buffer[4],UART2_buffer[5]);
+					MacAddr[1] = IntegrateAscToHex(UART2_buffer[6],UART2_buffer[7]);
+					MacAddr[2] = IntegrateAscToHex(UART2_buffer[8],UART2_buffer[9]);
+					MacAddr[3] = IntegrateAscToHex(UART2_buffer[10],UART2_buffer[11]);
+					MacAddr[4] = IntegrateAscToHex(UART2_buffer[12],UART2_buffer[13]);
+					MacAddr[5] = IntegrateAscToHex(UART2_buffer[14],UART2_buffer[15]);
 					
-					StepCommWifi = WIFI_WNETP;
-					//StepCommWifi = WIFI_TCPLK;
+					StepCommWifi = WIFI_TCPON_SEC;
 				}	
 			}
 			else if(Uart2NoRecTime >= 100) 
 			{
 				WaitSendWifi = 100;
-				StepCommWifi = WIFI_WMAC;
+				StepCommWifi = WIFI_WMAC_SEC;
 			}
 		break;
 			
@@ -1150,8 +799,7 @@ void fRecWifi(void)
 			{
 				if(UART2_buffer[14] == '+' && UART2_buffer[15] == 'o' && UART2_buffer[16] == 'k') 
 				{
-					//StepCommWifi = WIFI_CMDPW_STAT;
-					StepCommWifi = WIFI_NREGEN;
+					StepCommWifi = WIFI_RESET1;
 				}
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -1161,7 +809,38 @@ void fRecWifi(void)
 			}
 		break;
 			
-		case WIFI_CMDPW_SET_ACK:
+		case WIFI_WNETP_ACK:
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[36] == '+' && UART2_buffer[37] == 'o' && UART2_buffer[38] == 'k') 
+				{
+					//StepCommWifi = WIFI_RESET1;
+					StepCommWifi = WIFI_TCPTO;
+				}
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_WNETP;
+			}
+		break;
+		
+		case WIFI_TCPTO_ACK:
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[12] == '+' && UART2_buffer[13] == 'o' && UART2_buffer[14] == 'k') 
+				{
+					StepCommWifi = WIFI_CMDPW;
+				}
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_TCPTO;
+			}
+		break;
+			
+		case WIFI_CMDPW_ACK:
 			if(REC_WIFI_DATA) 
 			{
 				if(UART2_buffer[13] == '+' && UART2_buffer[14] == 'o' && UART2_buffer[15] == 'k') 
@@ -1172,26 +851,9 @@ void fRecWifi(void)
 			else if(Uart2NoRecTime >= 100) 
 			{
 				WaitSendWifi = 100;
-				StepCommWifi = WIFI_CMDPW_SET;
+				StepCommWifi = WIFI_CMDPW;
 			}
 		break;
-			
-		case WIFI_WNETP_ACK:
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[49] == '+' && UART2_buffer[50] == 'o' && UART2_buffer[51] == 'k') 
-				{
-					//StepCommWifi = WIFI_CMDPW_SET;
-					StepCommWifi = WIFI_APMODE_CHECK;
-				}
-			}
-			else if(Uart2NoRecTime >= 100) 
-			{
-				WaitSendWifi = 100;
-				StepCommWifi = WIFI_WNETP;
-			}
-		break;
-		
 			
 		case WIFI_RESET1_ACK:
 			if(REC_WIFI_DATA) 
@@ -1199,8 +861,7 @@ void fRecWifi(void)
 				if(UART2_buffer[6] == '+' && UART2_buffer[7] == 'o' && UART2_buffer[8] == 'k') 
 				{
 					WaitSendWifi = 150;
-					//StepCommWifi = WIFI_WMAC_SEC;
-					StepCommWifi = WIFI_CMDPW_STAT;
+					StepCommWifi = WIFI_APPLY1_AT;
 				}	
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -1210,13 +871,165 @@ void fRecWifi(void)
 			}
 		break;
 			
-		case WIFI_RESET2_ACK:
+		case WIFI_APPLY1_AT_ACK: 
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[0] == 'a') 
+				{
+					StepCommWifi = WIFI_ENT1_AT;
+				}
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_APPLY1_AT;
+			}
+		break;
+	
+		case WAIT_ENT1_AT_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[0] == '+' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k') 
+				{
+					WaitSendWifi = 600;
+					StepCommWifi = WIFI_WSLK;
+				}
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_APPLY1_AT;
+			}
+		break;	
+			
+		case WIFI_WSLK_ACK:
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[13] == 'D' && UART2_buffer[14] == 'i' && UART2_buffer[15] == 's')
+				{
+					WaitSendWifi = 10;
+					StepCommWifi = WIFI_WSLK;
+				}
+				else if(UART2_buffer[9] == '+' && UART2_buffer[10] == 'o' && UART2_buffer[11] == 'k')
+				{
+					StepCommWifi = WIFI_TCPON;
+				}
+				else if(UART2_buffer[0] == 's' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k')
+				{
+					StepCommWifi = WIFI_APPLY_AT;
+				}
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_WSLK;
+			}
+		
+		break;
+			
+		case WIFI_TCPON_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[14] == '+' && UART2_buffer[15] == 'o' && UART2_buffer[16] == 'k') 
+				{
+					StepCommWifi = WIFI_TCPEN;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_TCPON;
+			}
+		break;	
+			
+		case WIFI_TCPON_SEC_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[0] == '+' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k') 
+				{
+					StepCommWifi = WIFI_TCPEN_SEC;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 1000;
+				StepCommWifi = WIFI_TCPON_SEC;
+			}
+		break;	
+			
+		case WIFI_TCPEN_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[14] == '=' && UART2_buffer[15] == 'o' && UART2_buffer[16] == 'n') 
+				{
+					StepCommWifi = WIFI_TCPLK;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_TCPEN;
+			}
+		break;		
+			
+		case WIFI_TCPEN_SEC_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[3] == '=' && UART2_buffer[4] == 'o' && UART2_buffer[5] == 'n') 
+				{
+					StepCommWifi = WIFI_TCPLK_SEC;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 1000;
+				StepCommWifi = WIFI_TCPEN_SEC;
+			}
+		break;	
+			
+		case WIFI_TCPLK_ACK: 	
+			if(REC_WIFI_DATA) 
+			{
+				if(UART2_buffer[13] == '=' && UART2_buffer[14] == 'o' && UART2_buffer[15] == 'n') 
+				{
+					StepCommWifi = WIFI_RESET2;
+					
+					iapErase(WIFI_SETTED_FLAG);
+					iapWrite(WIFI_SETTED_FLAG,99);
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 100;
+				StepCommWifi = WIFI_TCPLK;
+			}
+		break;	
+			
+		case WIFI_TCPLK_SEC_ACK: 	
+
+			if(REC_WIFI_DATA) 
+			{
+//				Uart2SendStr("debug line 762\r");
+//				Uart2SendStr(UART2_buffer);
+				if(UART2_buffer[3] == '=' && UART2_buffer[4] == 'o') 
+				{
+					StepCommWifi = INIT_WIFI;
+				}	
+			}
+			else if(Uart2NoRecTime >= 100) 
+			{
+				WaitSendWifi = 1000;
+				StepCommWifi = WIFI_TCPLK_SEC;
+			}
+		break;	
+			
+		case WIFI_RESET2_ACK: 	
 			if(REC_WIFI_DATA) 
 			{
 				if(UART2_buffer[6] == '+' && UART2_buffer[7] == 'o' && UART2_buffer[8] == 'k') 
 				{
 					WaitSendWifi = 150;
-					StepCommWifi = WIFI_WSLK2;
+					StepCommWifi = INIT_WIFI;
 				}	
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -1224,15 +1037,14 @@ void fRecWifi(void)
 				WaitSendWifi = 100;
 				StepCommWifi = WIFI_RESET2;
 			}
-		break;
-		
+		break;		
 				
 		case SERVER_HAND_ACK:
 			if(REC_WIFI_DATA) 
 			{
 				if(fVerifyServerCammand() && UART2_buffer[9] == 'H') 	//53 56 B1 B2 B3 B4 B5 B6 0C 48 05 32
 				{
-					StepCommWifi = GET_GAIN;
+					StepCommWifi = WIFI_IDLE;
 				}
 				else
 				{
@@ -1243,35 +1055,6 @@ void fRecWifi(void)
 			{
 				StepCommWifi = SERVER_HAND;
 			}
-		break;
-			
-		case GET_GAIN_ACK:							
-			if(REC_WIFI_DATA) 
-			{
-				if(UART2_buffer[2] == 'K' && UART2_buffer[3] == 22 )		// check dianwen K
-				{
-					for(i=0;i<18;i++){
-						GAIN_SETTING[i] = UART2_buffer[i+4];
-					}
-          fSend_gain_res_debug();					
-					StepCommWifi = WIFI_GAIN_SET;
-					bCommandResult = 0;
-					bServer_Cmd_Ack = 0;
-				}
-			}	
-			else if(Uart2NoRecTime >= 300) {
-				bCommandResult = 0;
-				fSend_gain_res();
-				StepCommWifi = WIFI_IDLE;			// 30s 从数据库得不到回答，则跳过Gain设置，发送报告后，正常出力
-			}
-		
-		break;
-			
-		case WIFI_GAIN_SET_ACK:
-			if(bServer_Cmd_Ack){
-				fSend_gain_res();
-			}			
-			StepCommWifi = WIFI_IDLE;				
 		break;
 			
 		// wifi receive

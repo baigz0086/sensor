@@ -53,7 +53,6 @@ WIFI_EXT	xdata char const RESET_ACK[];
 WIFI_EXT	u8	Sensor_PowerOn_Time;
 
 
-
 void fClean_RecWIFI_Buf(void);
 void fInitWifi(void);
 void fSendToWIFI(void);
