@@ -6,6 +6,7 @@ IDE：Kill5
 
 主要硬件模块
  MCU：STC8F2K16S2
+ 
  Wifi：HF-LPT230-1
 
 服务器通信协议：TCP
