@@ -5,7 +5,7 @@ the sensor with c for the client controll.
 IDE：Kill5
 
 主要硬件模块
- MCU：STC8F2K16S2
+ MCU：STC8F1K17S2(7.3.12U)
  
  Wifi：HF-LPT230-1
 
