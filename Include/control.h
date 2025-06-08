@@ -225,10 +225,6 @@ typedef enum
 	WIFI_APMODE_SET_ACK  ,
 	WIFI_TCPLK_SEC			,			//查询TCP连接状态
 	WIFI_TCPLK_SEC_ACK  ,			//查询TCP连接状态回复
-	WIFI_MQTT_ID			,			//set the clientID  Ver2.0.0_0
-	WIFI_MQTT_ID_ACK  ,			
-	WIFI_MQTT_LOGIN  ,			//set the mqtt loginuser and password Ver2.0.0_0
-	WIFI_MQTT_LOGIN_ACK,			
 	DUMMY	
 	
 }nStepCommWifi;

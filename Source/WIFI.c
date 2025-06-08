@@ -1,10 +1,10 @@
 /****************************************Copyright (c)*********************************************
-**                                     佛山三俊电子有限公司
+**                                     佛山三俊电子有ˇ公司
 **									       开   发   部
 **--------------文件信息---------------------------------------------------------------------------
 **文   件   名: WIFI.c
 **创   建   人: 
-**创 建 日 期 ：
+**创 建 日 期 ˇ
 **描        述: 
 **--------------当前版本修订-----------------------------------------------------------------------
 ** 修改人: 
@@ -31,14 +31,14 @@ const  char xdata	ENT_AT_ACK[]="+ok\r\n\r\n";
 const  char xdata	ENTM[]="AT+ENTM\r";
 const  char xdata	ENTM_ACK[]="AT+ENTM\n\r+ok\r\n\r\n";
 
-const  char xdata	WMAC[]="at+wsmac\r";
+const  char xdata	WMAC[]="AT+wsmac\r";
 const  char xdata	WMAC_ACK[]="AT+WSMAC\n\r+ok=A5A4A3A2A1A0\r\n\r\n";
 
 // add 2023/2/12 追加注册包设定
-const  char xdata	NREGEN[]="at+nregen=A,on\r";
+const  char xdata	NREGEN[]="AT+nregen=A,on\r";
 const  char xdata	NREGEN_ACK[]="AT+NREGEN=A,on\n\r+ok\r\n\r\n";
 
-const  char xdata	NREGDT[]="at+nregdt=A,CL%MACCREG\r";
+const  char xdata	NREGDT[]="AT+nregdt=A,CL%MACCREG\r";
 const  char xdata	NREGDT_ACK[]="AT+nregdt=A,%MAC\n\r+ok\r\n\r\n";
 
 // add 2023/2/12 end
@@ -48,41 +48,41 @@ const  char xdata	NREGDT_ACK[]="AT+nregdt=A,%MAC\n\r+ok\r\n\r\n";
 //const  char xdata	SMARTAP_ACK[]="AT+SMARTAPCONFIG=on\n\r+ok\r\n\r\n";
 // add 2023/5/8 end
 
-const  char xdata	WMODE[]="at+wmode=sta\r";
+const  char xdata	WMODE[]="AT+wmode=sta\r";
 const  char xdata	WMODE_ACK[]="AT+WMODE=sta\n\r+ok\r\n\r\n";
 
-const  char xdata	APMODECHECK[]="at+wmode\r";
+const  char xdata	APMODECHECK[]="AT+wmode\r";
 const  char xdata	MODECHECK_ACK[]="AT+wmode\n\r+ok=AP\r\n\r\n";
 
-const  char xdata	APMODE[]="at+wmode=ap\r";
+const  char xdata	APMODE[]="AT+wmode=ap\r";
 const  char xdata	APMODE_ACK[]="AT+WMODE=ap\n\r+ok\r\n\r\n";
 
-const  char xdata	WNETP[]="at+netp=tcp,client,9999,www.healthsensor.com.cn\r";
-const  char xdata	WNETP_ACK[]="at+netp=tcp,client,9999,www.healthsensor.com.cn\n\r+ok\r\n\r\n";
+const  char xdata	WNETP[]="AT+netp=tcp,client,9999,www.healthsensor.com.cn\r";
+const  char xdata	WNETP_ACK[]="AT+netp=tcp,client,9999,www.healthsensor.com.cn\n\r+ok\r\n\r\n";
 
-//const  char xdata	WNETP[]="at+NETP=TCP,CLIENT,9999,123.57.185.154\r";
+//const  char xdata	WNETP[]="AT+NETP=TCP,CLIENT,9999,123.57.185.154\r";
 //const  char xdata	WNETP_ACK[]="AT+NETP=TCP,CLIENT,9999,123.57.185.154\n\r+ok\r\n\r\n";
 
-//const  char xdata	WNETP[]="at+netp=tcp,client,80,223.134.3.129\r";
+//const  char xdata	WNETP[]="AT+netp=tcp,client,80,223.134.3.129\r";
 //const  char xdata	WNETP_ACK[]="AT+NETP=tcp,client,80,223.134.3.129\n\r+ok\r\n\r\n";
 
 // legacy IP 2020/2/20
-//const  char xdata	WNETP[]="at+netp=tcp,client,80,47.96.101.117\r";
+//const  char xdata	WNETP[]="AT+netp=tcp,client,80,47.96.101.117\r";
 //const  char xdata	WNETP_ACK[]="AT+NETP=tcp,client,80,47.96.101.117\n\r+ok\r\n\r\n";
 
-const  char xdata	WSLK[]="at+wslk\r";
+const  char xdata	WSLK[]="AT+wslk\r";
 const  char xdata	WSLK_ACK[]="AT+WSLK\n\r+ok=SSID(MAC)\r\n\r\n";
 
-const  char xdata	TCPON[]="at+tcpdis=on\r";
+const  char xdata	TCPON[]="AT+tcpdis=on\r";
 const  char xdata	TCPON_ACK[]="AT+TCPDIS=on\n\r+ok\r\n\r\n";
 
-const  char xdata	TCPEN[]="at+tcpdis\r";
+const  char xdata	TCPEN[]="AT+tcpdis\r";
 const  char xdata	TCPEN_ACK[]="AT+TCPDIS\n\r+ok=on\r\n\r\n";
 
-const  char xdata	TCPLK[]="at+tcplk\r";
+const  char xdata	TCPLK[]="AT+tcplk\r";
 const  char xdata	TCPLK_ACK[]="AT+TCPLK\n\r+ok=on\r\n\r\n";
 
-const  char xdata	RESET[]="at+z\r";
+const  char xdata	RESET[]="AT+z\r";
 const  char xdata	RESET_ACK[]="AT+Z\n\r+ok\r\n\r\n";
 
 // add para
@@ -107,8 +107,11 @@ const  char xdata	TCPENHF_ACK[]="AT+TCPDIS\n\r+ok=on\r\n\r\n";
 
 //const  char xdata	SENSOR_VERSION[]="1.0.0_2";  // VR-BB后reset处理对应
 //const  char xdata	SENSOR_VERSION[]="1.0.0_3";  // 1,4->5  2,'p' cmd
-//const  char xdata	SENSOR_VERSION[]="1.0.0_4";  // 1,逻辑改造（CMDPW） 2,GAIN设定处理
-const  char xdata	SENSOR_VERSION[]="1.0.0_5";  // 1,APmode 2,netp = www.healthsensor.com.cn
+//const  char xdata	SENSOR_VERSION[]="1.0.0_4";  // 1,逻辑改造ˇCMDPWˇ 2,GAIN设定处理
+//const  char xdata	SENSOR_VERSION[]="1.0.0_5";  // 1,APmode 2,netp = www.healthsensor.com.cn
+//const  char xdata	SENSOR_VERSION[]="1.0.0_6";  // 欠番.
+//const  char xdata	SENSOR_VERSION[]="1.0.0_7";  // Add the AP order.
+const  char xdata	SENSOR_VERSION[]="1.0.0_8";  // delete the ap order.receive the AT responst from server.
 
 #define	REC_WIFI_DATA		(Uart2NoRecTime >= 30 && pUART2_rptr >= 1)
 
@@ -176,7 +179,59 @@ void fSendServerHand(void)
 	
 }
 
-// 电文K，读取GAIN设定值
+// add by 1.0.8 Mio lianjie bushang shi tongzhi fuwuqi
+void fSendServerIsWaitMio(void)
+{
+	u16 Sum;
+	
+	Sum = 0;
+	Uart2Send('C');
+	Sum += 'C';
+	Uart2Send('L');
+	Sum += 'L';
+	
+	Uart2Send(MacAddr[0]);
+	Sum += MacAddr[0];
+	Uart2Send(MacAddr[1]);
+	Sum += MacAddr[1];
+	Uart2Send(MacAddr[2]);
+	Sum += MacAddr[2];
+	Uart2Send(MacAddr[3]);
+	Sum += MacAddr[3];
+	Uart2Send(MacAddr[4]);
+	Sum += MacAddr[4];
+	Uart2Send(MacAddr[5]);
+	Sum += MacAddr[5];
+	
+	Uart2Send(19);  // 12+7
+	Sum += 19;
+	
+	Uart2Send('W');
+	Sum += 'W';
+	
+		Uart2Send('A');
+	Sum += 'A';
+	
+		Uart2Send('I');
+	Sum += 'I';
+	
+		Uart2Send('M');
+	Sum += 'M';
+	
+		Uart2Send('I');
+	Sum += 'I';
+	
+		Uart2Send('O');
+	Sum += 'O';
+	
+	Uart2Send((unsigned char)(Sum / 256));
+	Uart2Send((unsigned char)(Sum));
+	
+	// Uart2Send(StepCommSensor);  //for debug   yaoshanchu!!!
+	
+}
+
+// 电文Kˇ读取GAIN设定值
 void fSendGetGain(void)
 {
 	u16 Sum;
@@ -649,12 +704,6 @@ void fSendToWIFI(void)
 			StepCommWifi = WIFI_WMODE_ACK;
 		break;	
 		
-//		case WIFI_CMDPW_STAT:
-//			fClean_RecWIFI_Buf();
-//			Uart2SendStr(CMDPW_STAT); 
-//			StepCommWifi = WIFI_CMDPW_STAT_ACK;
-//		break;
-
 		case WIFI_ENTM:
 			fClean_RecWIFI_Buf();
 			Uart2SendStr(ENTM); 
@@ -773,6 +822,9 @@ void fSendToWIFI(void)
 			if(StepCommSensor == IDLE_SENSOR)	//if sensor ready,do shake hand
 			{
 				StepCommWifi = SERVER_HAND;
+			}else
+			{
+				fSendServerIsWaitMio();
 			}
 		break;
 			
@@ -848,6 +900,20 @@ void fRecWifi(void)
 {
 	u8 i;
 	
+	//ver1.08 if recv from server = link ok
+	if(StepCommWifi != WIFI_IDLE)
+	{
+		if(REC_WIFI_DATA) 
+		{
+			if(UART2_buffer[0] == 's' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k')
+			{
+				StepCommWifi = INIT_WIFI;   // 服务器回答ˇ网络建立且为透传状态
+				return;
+			}
+		}
+	}	
+	// ver1.08 end
+	
 	switch(StepCommWifi)
 	{
 		case WIFI_APPLY_AT_ACK: 
@@ -872,6 +938,7 @@ void fRecWifi(void)
 				{
 					//StepCommWifi = WIFI_CMDPW_STAT;
 					StepCommWifi = WIFI_WMODE;
+					//StepCommWifi = WIFI_WSLKO;
 				}
 			}
 			else if(Uart2NoRecTime >= 100) 
@@ -929,7 +996,7 @@ void fRecWifi(void)
 				}
 				else if(UART2_buffer[0] == 's' && UART2_buffer[1] == 'o' && UART2_buffer[2] == 'k')
 				{
-					StepCommWifi = WIFI_APPLY_AT;   // 服务器回答：网络建立且为透传状态
+					StepCommWifi = INIT_WIFI;   // 服务器回答ˇ网络建立且为透传状态
 				}
 			}
 			else if(Uart2NoRecTime >= 200) 
@@ -987,7 +1054,7 @@ void fRecWifi(void)
 				if(pUART2_rptr > 15){
 					if(UART2_buffer[14] == 'A' && UART2_buffer[15] == 'P' ){
 						WaitSendWifi = 100;  // 1s 间隔 
-						StepCommWifi = WIFI_APMODE_CHECK;  // AP模式继续循环，知道解除AP模式
+						StepCommWifi = WIFI_APMODE_CHECK;  // AP模式继续循环ˇ知道解除AP模式
 					}else{
 						StepCommWifi = WIFI_WSLK;
 					}						
@@ -1041,7 +1108,7 @@ void fRecWifi(void)
 				{
 					//StepCommWifi = WIFI_RESET2;
 					StepCommWifi = WIFI_ENTM; // 转换透传模式
-				}	
+				}
 			}
 			else if(Uart2NoRecTime >= 100) 
 			{
@@ -1160,7 +1227,7 @@ void fRecWifi(void)
 				StepCommWifi = WIFI_WMODE;
 			}
 		break;
-			
+
 		case WIFI_CMDPW_SET_ACK:
 			if(REC_WIFI_DATA) 
 			{
@@ -1201,7 +1268,7 @@ void fRecWifi(void)
 					WaitSendWifi = 150;
 					//StepCommWifi = WIFI_WMAC_SEC;
 					StepCommWifi = WIFI_CMDPW_STAT;
-				}	
+				}
 			}
 			else if(Uart2NoRecTime >= 100) 
 			{
@@ -1217,7 +1284,7 @@ void fRecWifi(void)
 				{
 					WaitSendWifi = 150;
 					StepCommWifi = WIFI_WSLK2;
-				}	
+				}
 			}
 			else if(Uart2NoRecTime >= 100) 
 			{
@@ -1262,7 +1329,7 @@ void fRecWifi(void)
 			else if(Uart2NoRecTime >= 300) {
 				bCommandResult = 0;
 				fSend_gain_res();
-				StepCommWifi = WIFI_IDLE;			// 30s 从数据库得不到回答，则跳过Gain设置，发送报告后，正常出力
+				StepCommWifi = WIFI_IDLE;			// 30s 从数据库得不到回答ˇ则跳过Gain设置ˇ发送报告后ˇ正常出力
 			}
 		
 		break;

@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 1   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE CONTROL
@@ -62,7 +62,7 @@ line level    source
   52          **  Èë¿Ú²ÎÊý: ÎÞ 
   53          **  ³ö¿Ú²ÎÊý: ÎÞ 
   54          **  ·µ»ØÖµ  £ºÎÞ 
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 2   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 2   
 
   55          **  È«¾Ö±äÁ¿: ÎÞ 
   56          **  µ÷ÓÃÄ£¿é: ÎÞ 
@@ -126,7 +126,7 @@ line level    source
  114          {
  115   1      //  if(ilKey)     // key press
  116   1      //  {
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 3   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 3   
 
  117   1      //    olReload = 0;
  118   1      //  }
@@ -190,7 +190,7 @@ line level    source
  176   2          
  177   2          case RESET_SENSOR:            //reset Mio
  178   2            fClean_RecSensor_Buf();
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 4   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 4   
 
  179   2            Uart1Send('u'); 
  180   2          
@@ -254,7 +254,7 @@ line level    source
  238   3            }
  239   2            else if(StepCommWifi == REC_SERVER_COMMAND)
  240   2            {
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 5   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 5   
 
  241   3              //StepCommSensor = SEND_SENSOR_COMMAND; // if receive server command,and no in normal data mode,
  242   3                                                      // turn to send sensor command
@@ -318,7 +318,7 @@ line level    source
  300   2            StepCommSensor = WAIT_START_EX_MODE;    
  301   2          break;
  302   2          
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 6   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 6   
 
  303   2          case READ_GAIN_SETTING:
  304   2            fClean_RecSensor_Buf();
@@ -382,7 +382,7 @@ line level    source
  362   3              {
  363   4                StepCommSensor = HAND_SENSOR; 
  364   4                WaitSensorData = 100;
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 7   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 7   
 
  365   4              }
  366   3            }
@@ -446,7 +446,7 @@ line level    source
  424   4              }
  425   3            }
  426   2            else if(Uart1NoRecTime >= 200) StepCommSensor = QUERY_STUDY_STATE;    //2 second cycle confirmation
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 8   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 8   
 
  427   2          break;
  428   2          
@@ -510,7 +510,7 @@ line level    source
  486   2      
  487   2      //        bSend_WIFI_Data = 1;
  488   2      //      }
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 9   
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 9   
 
  489   2      //      //else if(Uart1NoRecTime >= SendInterval) StepCommSensor = IDLE_SENSOR;  // ÐÂ°æMio¶ÔÓ¦ºáÕ¹¿ª£¬4µÃ²»µ
              -½Ô¤ÆÚ½á¹ûºó£¬·¢ÐÐ3ÏÂÒ»ÂÖÊý¾Ý²É¼¯
@@ -574,7 +574,7 @@ line level    source
  547   2      
  548   2          case WAIT_RESET_SENSOR:     
  549   2            if(Uart1NoRecTime >= 5 ) 
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 10  
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 10  
 
  550   2            {
  551   3              WaitSensorData = 100;
@@ -638,7 +638,7 @@ line level    source
  609   3              StepCommSensor = READ_GAIN_SETTING;
  610   3            }
  611   2          break;  
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 11  
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 11  
 
  612   2            
  613   2          case WAIT_READ_GAIN:
@@ -702,7 +702,7 @@ line level    source
  670   2          break;
  671   2            
  672   2          case WAIT_NORMAL_MODE_SENSOR:
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 12  
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 12  
 
  673   2            if(Uart1NoRecTime >= 5 && pUART1_rptr >= 1) 
  674   2            {
@@ -766,7 +766,7 @@ line level    source
  732   1      
  733   1        Gain_set_buffer[40] = '0';
  734   1        Gain_set_buffer[41] = '0';  
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 13  
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 13  
 
  735   1        Gain_set_buffer[42] = '0';  
  736   1        Gain_set_buffer[43] = '0';  
@@ -830,7 +830,7 @@ line level    source
  794   1      //                Year++;
  795   1      //              }
  796   1      //            }
-C51 COMPILER V9.59.0.0   CONTROL                                                           06/05/2023 01:02:14 PAGE 14  
+C51 COMPILER V9.59.0.0   CONTROL                                                           06/09/2025 08:02:58 PAGE 14  
 
  797   1      //          }
  798   1      //        }
